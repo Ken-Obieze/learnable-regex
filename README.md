@@ -12,19 +12,8 @@ This is a simple JavaScript program to validate credit card numbers using regula
 		git clone https://github.com/Ken-Obieze/learnable-regex.git
         cd learnable-regex
 	```
-2. Install dependencies:
-    ```bash
-        npm install prompt-sync
-    ```
-3. Run the application:
-    ```bash
-        node card_validator.js
-    ```
-3. Enter a credit card number when prompted.
-4. The program will validate the entered credit card number and display the card type (VISA, MASTERCARD, AMEX, DISCOVER, VERVE) or indicate if it's invalid.
-
-## Dependencies
-* prompt-sync: Synchronous prompt for command-line applications.
+2. Run the `card_validator.js` file
+3. The program will validate some sample credit card number and display the card type (VISA, MASTERCARD, AMEX, DISCOVER, VERVE) or indicate if it's invalid.
 
 ## Regular Expressions
 
@@ -82,32 +71,53 @@ Regular expressions are used to validate credit card numbers for the following c
 
 ## JavaScript Code
 
-The validation logic is implemented in a function.The program prompts the user for a credit card number, validates it using regular expressions, and displays the result. Below is the code snippet for extraction and validation of the card number.
+The validation logic is implemented in a function.The program runs tests against an already providrd array of card numbers, validates it using regular expressions, and displays the result. Below is the provided array and the output after the validation is carried out.
 
 ```javascript
 // JavaScript code snippet
 
-// code for extracting card number
-let card_num;
+// Array of specific card numbers for testing
+const card_numbers = [
+    "40000114426373",
+    "455647829887",
+    "501123444444483354",
+    "39928377484843",
+    "6011054628216702",
+    "35289012637479",
+    "6500247350282417",
+    "375555512635199",
+    "400001126373",
+    "5555555555554444",
+    "378282246310005",
+    "5060990580000217499",
+    "4916188092401778",
+    "5105105105105100",
+    "371449635398431",
+    "5060990580000217490" 
+];
 
-// Condition to check for invalid inputs
-do {
-    card_num = prompt("Input card number: ");
-} while (!/^\d+$/.test(card_num)); // Ensures input contains only digits
-
-let result = validateCardNumber(card_num);
-console.log(result);
+// Test specific card numbers
+for (const card_num of card_numbers) {
+    console.log(`Card Number: ${card_num}, Type: ${validateCardNumber(card_num)}`);
+}
 ```
 
-## Example
+## Output
 ```bash
-   node card_validator.js
-   Input card number: 466658746578999
-   INVALID
-```
-
-```bash
-   node card_validator.js
-   Input card number: 4099876555676
-   VISA
+  Card Number: 40000114426373, Type: INVALID
+  Card Number: 455647829887, Type: INVALID
+  Card Number: 501123444444483354, Type: INVALID
+  Card Number: 39928377484843, Type: INVALID
+  Card Number: 6011054628216702, Type: DISCOVER
+  Card Number: 35289012637479, Type: INVALID
+  Card Number: 6500247350282417, Type: DISCOVER
+  Card Number: 375555512635199, Type: AMEX
+  Card Number: 400001126373, Type: INVALID
+  Card Number: 5555555555554444, Type: MASTERCARD
+  Card Number: 378282246310005, Type: AMEX
+  Card Number: 5060990580000217499, Type: INVALID
+  Card Number: 4916188092401778, Type: VISA
+  Card Number: 5105105105105100, Type: MASTERCARD
+  Card Number: 371449635398431, Type: AMEX
+  Card Number: 5060990580000217490, Type: INVALID 
 ```
