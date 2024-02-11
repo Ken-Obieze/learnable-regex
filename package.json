@@ -1,0 +1,22 @@
+{
+  "name": "learnable-regex",
+  "version": "1.0.0",
+  "description": "A simple credit card validator",
+  "main": "card_validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ken-Obieze/learnable-regex.git"
+  },
+  "author": "Ejiofor Obieze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ken-Obieze/learnable-regex/issues"
+  },
+  "homepage": "https://github.com/Ken-Obieze/learnable-regex#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
